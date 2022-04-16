@@ -1,0 +1,79 @@
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+.content {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#score,
+#time {
+  color: aqua;
+  font-weight: bold;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+  width: 400px;
+}
+
+.grid-body {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.result {
+  text-align: center;
+  color: chartreuse;
+  font-size: larger;
+  font-weight: bold;
+}
+
+#level {
+  text-align: center;
+  color: crimson;
+  font-size: larger;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  font-weight: 900;
+  color: tomato;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  --x-offset: -0.0625em;
+  --y-offset: 0.0625em;
+  --stroke: 0.025em;
+  --background-color: white;
+  --stroke-color: lightblue;
+
+  text-shadow: var(--x-offset) var(--y-offset) 0px var(--background-color),
+    calc(var(--x-offset) - var(--stroke)) calc(var(--y-offset) + var(--stroke))
+      0px var(--stroke-color);
+}
+/* for browsers that support spread, added in
+  https://drafts.csswg.org/css-text-decor-4/#text-shadow-property
+  currently: none browsers! none of them!
+  I can't even find a test: 
+  https://wpt.fyi/results/css/css-text-decor */
+@supports (text-shadow: 1px 1px 1px 1px black) {
+  h1 {
+    text-shadow: var(--x-offset) var(--y-offset) 0px 0px var(--background-color),
+      var(--x-offset) var(--y-offset) var(--stroke) 0px var(--stroke-color);
+  }
+}
